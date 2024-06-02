@@ -29,13 +29,13 @@
                 <div class="col-md-6">
                     <div class="row mt-2">
                         <div class="col">
-                            <img src="./imagens/padrao/pao_superior.png" alt="">
-                            <img src="./imagens/padrao/alface.png" alt="">
-                            <img src="./imagens/padrao/molho.png" alt="">
-                            <img src="./imagens/padrao/molho.png" alt="">
-                            <img src="./imagens/padrao/molho.png" alt="">
-                            <img src="./imagens/padrao/hamburguer.png" alt="">
-                            <img src="./imagens/padrao/pao_inferior.png" alt="">
+                            <img :src="pao[0]" alt="">
+                            <img :src="alface[0]" alt="">
+                            <img :src="ketchup[0]" alt="">
+                            <img :src="mostarda[0]" alt="">
+                            <img :src="maionese[0]" alt="">
+                            <img :src="hamburguer[0]" alt="">
+                            <img :src="pao[1]" alt="">
                         </div>
                     </div>
                 </div>
@@ -89,7 +89,7 @@
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="checkbox">
                                         <label class="form-check-label">
-                                          Catchup
+                                          Ketchup
                                         </label>
                                     </div>
                                     <div class="form-check form-check-inline">
@@ -145,7 +145,27 @@
 
     <script>
         const vm = new Vue({
-            el: '#app'
+            el: '#app',
+            computed: {
+                pao() {
+                    return ['imagens/padrao/pao_superior.png', 'imagens/padrao/pao_inferior.png']
+                },
+                alface() {
+                    return ['imagens/padrao/alface.png']
+                },
+                ketchup() {
+                    return ['/imagens/padrao/molho.png']
+                },
+                mostarda() {
+                    return ['imagens/padrao/molho.png']
+                },
+                maionese() {
+                    return ['imagens/padrao/molho.png']
+                },
+                hamburguer() {
+                    return ['imagens/padrao/hamburguer.png']
+                }
+            }
         })
     </script>
     
