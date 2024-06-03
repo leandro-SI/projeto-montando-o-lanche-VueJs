@@ -175,7 +175,7 @@
                                 <div class="card-header">PEDIDO CONFIRMADO</div>
                                 <div class="card-body">
                                     <p>Agora é só aguardar 10 minutinhos!</p>
-                                    <p>Vamos chamar vc em breve ;)</p>
+                                    <p>Vamos chamar vc em breve ;</p>
                                 </div>
                             </div>
                         </div>
@@ -218,13 +218,15 @@
                     if (this.inputNome && this.inputEndereco) {
                         this.etapa = 3
 
-                        this.novoPedidoAssincrono = setTimeout(() => this.novoPedido(), 7000);
+                        this.novoPedidoAssincrono = setTimeout(() => {this.novoPedido();}, 7000);
 
                     } else {
                         alert('Você precisa informar o seu Nome e Endereço.')
                     }
                 },
                 novoPedido() {
+                    this.etapa = 1;
+                    
                     this.inputPao = '';
                     this.inputSalada = [];
                     this.inputMolhos = [];
@@ -255,19 +257,19 @@
                 ketchup() {
 
                     if (this.inputMolhos.includes('ketchup')) {
-                        return '/imagens/ketchup.png'
+                        return 'imagens/ketchup.png'
                     }
-                    return '/imagens/padrao/molho.png'
+                    return 'imagens/padrao/molho.png'
                 },
                 mostarda() {
                     if (this.inputMolhos.includes('mostarda')){
-                        return '/imagens/mostarda.png'
+                        return 'imagens/mostarda.png'
                     }
                     return 'imagens/padrao/molho.png'
                 },
                 maionese() {
                     if (this.inputMolhos.includes('maionese')) {
-                        return '/imagens/maionese.png'
+                        return 'imagens/maionese.png'
                     }
                     return 'imagens/padrao/molho.png'
                 },
@@ -275,11 +277,11 @@
 
                     switch(this.inputHamburguer) {
                         case 'bovino':
-                            return '/imagens/bovino.png'
+                            return 'imagens/bovino.png'
                         case 'frango':
-                            return '/imagens/frango.png'
+                            return 'imagens/frango.png'
                         case 'soja':
-                            return '/imagens/soja.png'
+                            return 'imagens/soja.png'
                         default:
                             return 'imagens/padrao/hamburguer.png'
                     }
